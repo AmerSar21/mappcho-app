@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Patient Enrolment
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button style="color: #ffffff;" (click)="prosesLogout()">
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>     
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-searchbar (ionChange)="searchFiltered($event)"></ion-searchbar>
+    </ion-buttons>    
+  </ion-toolbar>
+  <ion-list class="box-content" color="none">
+    <div *ngIf="plist && plist.length > 0">
+      <ion-item-sliding  *ngFor="let perlist of plist">
+          <ion-item-options side="start">
+            <ion-item-option color="danger" (click)="delPerRec(perlist.pe_id)">Delete</ion-item-option>
+          </ion-item-options>
+          <ion-item color="none" lines="none">
+            <ion-label><b>{{perlist.lname}}, {{perlist.fname}}</b><br>
+                <p style="font-size: small !important;">{{perlist.homeno}} {{perlist.street}} {{perlist.barangay}}<br>{{perlist.civil_stat}}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option (click)="viewPerRec(perlist.pe_id,perlist.family_serial_no,perlist.lname,perlist.fname,perlist.mname,perlist.suffix,perlist.sex,perlist.b_place, perlist.b_date,perlist.bloodtype,perlist.civil_stat,perlist.spouse_name,perlist.educ_attainment,perlist.employ_status,perlist.fam_position,perlist.patient_id,perlist.home_no,perlist.street,perlist.barangay,perlist.city,perlist.province,perlist.mothers_name,perlist.contact_no,perlist.dswdnhts,perlist.facility_no,perlist.ph_member,perlist.ph_no,perlist.member_category)">
+            View
+            </ion-item-option>
+          </ion-item-options>
+      </ion-item-sliding>     
+    </div>
+    <div *ngIf="plist === undefined || plist.length === 0">
+      <ion-item color="none" lines="none">
+        <ion-label style="text-align: center;">No data on list...</ion-label>
+      </ion-item>     
+    </div>
+  </ion-list>
+  <ion-fab style="position: absolute; bottom: 5%; right: 10%;" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-up">
+      </ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="primary" data-desc="Upload PER List" (click)="uploadViaOnline()">
+        <ion-icon name="cloud-upload">
+        </ion-icon>
+      </ion-fab-button>                        
+      <ion-fab-button color="primary" data-desc="Download as CSV" (click)="fileWrite()">
+        <ion-icon name="download">
+        </ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="primary" data-desc="Create PER" (click)="addenrolRec()">
+        <ion-icon name="person-add">
+        </ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+	  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
+	  </ion-back-button>
+    </ion-buttons>	
+	<ion-title>
+		Record Information
+	</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<div class="ion-padding">
+			<ion-card>
+			  <ion-card-header>
+			  	<div style="text-align: center;">	  		
+				    <ion-card-title>Activity Information</ion-card-title>
+			  	</div>
+			  </ion-card-header>
+			  <ion-card-content>
+			  	<ion-row>
+			  		<ion-col>
+				  		<b>Event</b>
+				  		<br>
+					  	<h2>{{name}}</h2>		  			  				  			  			  		
+			  		</ion-col>
+			  	</ion-row>
+			  	<br>
+			  	<ion-row>
+			  		<ion-col>
+				  		<b>Description</b>
+				  		<br>
+					  	<p class="col-size">{{description}}</p>		  			  				  			  			  		
+			  		</ion-col>
+			  	</ion-row>
+			  	<br>		  	
+			  	<ion-row>
+			  		<ion-col>
+			  			<b>Scheduled Date</b>
+				  		<br>
+					  	<h1>{{actdate}}</h1>		  	
+			  		</ion-col>
+			  		<ion-col>
+			  			<b>Status</b>
+			  			<br>
+			  			<h1>{{status}}</h1>
+			  		</ion-col>		  		
+			  	</ion-row>
+			  </ion-card-content>
+			</ion-card>
+			<ion-fab slot="fixed" style="position: absolute; bottom: 5%; right: 10%;">
+		      <ion-fab-button (click)="updateActivity(act_id,name,description,actdate,status)">
+		        <ion-icon name="create">
+		        </ion-icon>
+		      </ion-fab-button>
+		    </ion-fab>	
+		</div>
+	</ion-grid>
+</ion-content>

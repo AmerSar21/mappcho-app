@@ -1,0 +1,42 @@
+<ion-header style="background-color: #0cd1e8;">
+  <div>
+	<img src="assets/images/logo4.png" alt="logo">				
+  </div> 
+</ion-header>
+
+<ion-content>
+	<div padding>
+		<ion-card>
+			<ion-card-content>
+				<ion-list lines="none">
+					<ion-item color="#ededed">
+						<ion-input placeholder="Username" type="text" [(ngModel)]="username"><ion-icon style="margin-left: 12px" name="person"></ion-icon></ion-input>
+					</ion-item>
+					<br>	
+					<ion-item color="#ededed">
+						<ion-input placeholder="Password" type="password" [(ngModel)]="password"><ion-icon style="margin-left: 12px" name="lock"></ion-icon>
+						</ion-input>
+					</ion-item>		
+					<div padding>					
+						<div style="text-align: center;">
+							<p *ngIf="submitAttempt && !isActive && !doesExist && !checkCon" style="color: #ea6153;">Invalid Username and Password.</p>
+						</div>
+						<div style="text-align: center;">
+							<p *ngIf="isActive && !doesExist && !checkCon && !submitAttempt" style="color: #ea6153;">Account no longer Active.</p>
+						</div>
+						<div style="text-align: center;">
+							<p *ngIf="doesExist && !isActive && !checkCon && !submitAttempt" style="color: #ea6153;">Account doesn't Exist.</p>
+						</div>
+						<div style="text-align: center;">
+							<p *ngIf="checkCon && !isActive && !doesExist && !submitAttempt" style="color: #ea6153;">Server Timed out. Try again..</p>
+						</div>
+					</div>
+				</ion-list>
+				<div style="text-align: center;">
+					<ion-button expand="full" shape="round" (click) = "processLogin()">Sign In</ion-button>
+					<p expand="block" padding>Don't have an account?<br><a (click)="formForAcc()" color="warning">Register Here</a></p>
+				</div>				
+			</ion-card-content>
+		</ion-card>
+ 	</div>
+</ion-content>

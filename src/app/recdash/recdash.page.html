@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Patient Records
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="tertiary" (click)="prosesLogout()">
+      	<ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="ion-padding">
+    <div class="row"> 
+      <div align-right>
+        <ion-button color="secondary" fill="outline" (click)="patenrRec()">Patient Enrolment Record</ion-button>           
+      </div>                 
+      <div align-left>
+        <ion-button color="secondary" fill="outline" (click)="indivtreatRec()">Indvidual Treatment Record</ion-button>
+      </div>    
+    </div>
+	</div>
+</ion-content>

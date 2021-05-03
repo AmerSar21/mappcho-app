@@ -1,0 +1,104 @@
+<ion-header>
+  <div style="background-color: #0cd1e8;">
+  	<ion-toolbar color="secondary">
+  		<ion-buttons slot="start">
+		  <ion-back-button text="back" (click)="login()" icon="arrow-dropleft" fill="outline">
+		  </ion-back-button>
+	    </ion-buttons>
+	</ion-toolbar>
+	<div>
+		<img src="assets/images/logo6.png" alt="logo">				
+	</div>
+  </div>
+</ion-header>
+
+<ion-content padding>
+	<div class="scroll" scrollY="true">
+		<form [formGroup]="slideOneForm">
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Personal Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Last name</ion-label>
+						<ion-input type="text" formControlName="lname" required></ion-input>
+						<ion-icon name="document-text-outline" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">First name</ion-label>
+						<ion-input type="text" formControlName="fname"></ion-input>
+						<ion-icon name="document-text-outline" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Address</ion-label>
+						<ion-input type="text" formControlName="address"></ion-input>
+						<ion-icon name="mail" slot="end" align-self-center></ion-icon>
+					</ion-item>					
+					<ion-item color="none">
+						<ion-label position="floating">Email</ion-label>
+						<ion-input type="text" formControlName="email" placeholder="example@sample.com"></ion-input>
+						<ion-icon name="mail" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label>+63 - </ion-label>
+						<ion-input type="text" formControlName="contnum" placeholder="##########"></ion-input>
+						<ion-icon name="mail" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none" lines="none">
+					  <ion-label>Birth Date </ion-label>
+					  <ion-datetime displayFormat="YYYY-MM-DD" formControlName="bdate" min="1950-01-01" max="2035-12-09" placeholder="Select Date"></ion-datetime>
+					  <ion-icon name="calendar" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none"lines="none">
+				      	<ion-label>Gender </ion-label>
+				      	<ion-select placeholder="Select One" formControlName="gender"> 
+				        	<ion-select-option value="Male">Male</ion-select-option>
+				        	<ion-select-option value="Female">Female</ion-select-option>
+				      	</ion-select>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>	
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Account Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Username</ion-label>
+						<ion-input type="text" formControlName="uname"></ion-input>
+						<ion-icon name="person" slot="end" align-self-center></ion-icon>			
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Password</ion-label>
+						<ion-input type="password" formControlName="upass"></ion-input>
+						<ion-icon name="key" slot="end" align-self-center></ion-icon>	
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Confirm Password</ion-label>
+						<ion-input type="password" formControlName="cpass"></ion-input>
+						<ion-icon name="key" slot="end" align-self-center></ion-icon>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>				
+		</form>
+		<div style="text-align: center;">
+			<p *ngIf="unameVal && !passValid && !submitAttempt" style="color: #ea6153;">Username already Taken.</p>
+		</div>		
+		<div style="text-align: center;">
+			<p *ngIf="submitAttempt && !passValid" style="color: #ea6153;">Please fill out all details accurately.</p>
+		</div>
+		<div style="text-align: center;">
+			<p *ngIf="passValid && !submitAttempt" style="color: #ea6153;">Password Mismatched.</p>
+		</div>
+		<div class="ion-padding">
+			<div style="text-align: center;">
+				<ion-button expand="full" shape="round" color="secondary" (click)="submit()">Submit</ion-button>
+			</div>
+		</div>
+	</div>
+</ion-content>

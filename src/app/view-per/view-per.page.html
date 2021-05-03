@@ -1,0 +1,205 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+	  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
+	  </ion-back-button>
+    </ion-buttons>
+  	<ion-title>
+  		RECORD CONTENT
+  	</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="ion-padding">
+		<div style="text-align: center;">
+			<h2>{{lname}}, {{fname}} {{mname}}</h2>
+			<ion-label>Patient Name</ion-label>
+		</div>
+		<ion-card>
+		  <ion-card-header>
+		  	<div style="text-align: center;">	  		
+			    <ion-card-title>Patient Information</ion-card-title>
+		  	</div>
+		  </ion-card-header>
+		  <ion-card-content>
+		  	<ion-row>
+		  		<ion-col>
+		  			Record Number
+			  		<br>
+				  	<h1>{{pe_id}}</h1>		  	
+		  		</ion-col>
+		  		<ion-col>
+		  			Patient ID
+		  			<br>
+		  			<h1>{{patient_id}}</h1>
+			  		<br>
+		  		</ion-col>		  		
+		  	</ion-row>
+		  	<ion-row>
+		  		<ion-col>
+			  		Serial Number
+				  	<h1>{{family_serial_no}}</h1>		  			  				  			  			  		
+		  		</ion-col>
+		  	</ion-row>
+		  </ion-card-content>
+		</ion-card>
+		<ion-card>
+		  <ion-card-header>
+		  	<div style="text-align: center;">  		
+			    <ion-card-title>Personal Information</ion-card-title>
+		  	</div>
+		  </ion-card-header>
+		  <ion-card-content>
+		  	<ion-row>
+		  		<ion-col>
+		  			Civil Status
+		  			<br>
+		  			<h1>{{civil_stat}}</h1>
+		  		</ion-col>
+		  		<ion-col>
+		  			Family Position
+		  			<br>
+		  			<h1>{{fam_position}}</h1>
+		  			<br>
+		  		</ion-col>
+		  	</ion-row>
+		  	<ion-row>
+		  		<ion-col>
+		  			Gender
+		  			<br>
+		  			<h1>{{sex}}</h1>
+		  			<br>
+		  		</ion-col>
+		  		<ion-col>
+		  			Blood Type
+		  			<br>
+		  			<h1>{{bloodtype}}</h1>
+		  			<br>
+		  		</ion-col>		  		
+		  	</ion-row>
+		  	<ion-row>
+		  		<ion-col>
+				  	Suffix
+				  	<br>
+				  	<h1>{{suffix}}</h1>
+				  	<br>
+				  	Birth Date
+				  	<br>
+				  	<h1>{{b_date}}</h1>
+				  	<br>
+				  	Birth Place
+				  	<br>
+				  	<h1>{{b_place}}</h1>
+				  	<br>
+				  	Educational Attaintment
+				  	<br>
+				  	<h1>{{educ_attainment}}</h1>
+				  	<br>
+				  	Employment Status
+				  	<br>
+				  	<h1>{{employ_status}}</h1>
+		  		</ion-col>
+		  	</ion-row>
+		  </ion-card-content>
+		</ion-card>
+		<ion-card>
+		  <ion-card-header>
+		  	<div style="text-align: center;">  		
+			    <ion-card-title>Contact Information</ion-card-title>
+		  	</div>
+		  </ion-card-header>
+		  <ion-card-content>
+		  	<ion-row>
+		  		<ion-col>
+				  	Contact Number
+				  	<br>
+				  	<h1>{{contact_no}}</h1>
+				  	<br>
+				  	Spouse
+				  	<br>
+				  	<h1>{{spouse_name}}</h1>
+				  	<br>
+				  	Mothers Name
+				  	<br>
+				  	<h1>{{mothers_name}}</h1>
+		  		</ion-col>
+		  	</ion-row>
+		  </ion-card-content>
+		</ion-card>
+		<ion-card>
+		  <ion-card-header>
+		  	<div style="text-align: center;">	  		
+			    <ion-card-title>Residential Address</ion-card-title>
+		  	</div>
+		  </ion-card-header>
+		  <ion-card-content>
+		  	<ion-row>
+		  		<ion-col>
+				  	Address
+				  	<br>
+				  	<h1>{{home_no}} {{street}} {{barangay}}</h1>
+				  	<br>
+				  	City
+				  	<br>
+				  	<h1>{{city}}</h1>
+				  	<br>
+				  	Province
+				  	<br>
+				  	<h1>{{province}}</h1>
+		  		</ion-col>
+		  	</ion-row>
+		  </ion-card-content>
+		</ion-card>
+		<ion-card>
+		  <ion-card-header>
+		  	<div style="text-align: center;">
+			    <ion-card-title>CHO/RHU Information</ion-card-title>
+		  	</div>
+		  </ion-card-header>
+		  <ion-card-content>
+		  	<ion-row>
+		  		<ion-col>
+				  	Philhealth Member
+				  	<br>
+				  	<h1>{{ph_member}}</h1>
+				  	<br>		  			
+		  		</ion-col>
+		  		<ion-col>  			
+				  	Philhealth Number
+				  	<br>
+				  	<h1>{{ph_no}}</h1>
+				  	<br>
+		  		</ion-col>		  		
+		  	</ion-row>
+		  	<ion-row>
+		  		<ion-col>
+		  			DSWD NHTS
+				  	<br>
+				  	<h1>{{dswdnhts}}</h1>
+				  	<br>
+		  		</ion-col>
+		  		<ion-col>
+				  	Household Number
+				  	<br>
+				  	<h1>{{facility_no}}</h1>
+				  	<br>
+		  		</ion-col>
+		  	</ion-row>
+		  	<ion-row>
+		  		<ion-col>
+				  	Member Category
+				  	<br>
+				  	<h1>{{member_category}}</h1>
+		  		</ion-col>
+		  	</ion-row>
+		  </ion-card-content>
+		</ion-card>
+	</div>
+	<ion-fab slot="fixed" style="position: absolute; bottom: 5%; right: 10%;">
+      <ion-fab-button  (click)="updatePerRec(pe_id,family_serial_no,lname,fname,mname,suffix,sex,b_place, b_date,bloodtype,civil_stat,spouse_name,educ_attainment,employ_status,fam_position,patient_id,home_no,street,barangay,city,province,mothers_name,contact_no,dswdnhts,facility_no,ph_member,ph_no,member_category)">
+        <ion-icon name="create">
+        </ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+	  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
+	  </ion-back-button>
+      <ion-title>Add Account</ion-title>	  
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="ion-padding">
+		<ion-input class="ion-hide" [(ngModel)]="uid" value="{{userid}}"></ion-input>
+		<form [formGroup]="accountForm">
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Personal Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Last name</ion-label>
+						<ion-input type="text" formControlName="lname" required></ion-input>
+						<ion-icon name="document-text-outline" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">First name</ion-label>
+						<ion-input type="text" formControlName="fname"></ion-input>
+						<ion-icon name="document-text-outline" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Email</ion-label>
+						<ion-input type="text" formControlName="email" placeholder="example@sample.com"></ion-input>
+						<ion-icon name="mail" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Address</ion-label>
+						<ion-input type="text" formControlName="address"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label>+63 - </ion-label>
+						<ion-input type="text" formControlName="contnum" placeholder="##########"></ion-input>
+						<ion-icon name="mail" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none" lines="none">
+					  <ion-label>Birth Date </ion-label>
+					  <ion-datetime displayFormat="YYYY-MM-DD" formControlName="bdate" min="1950-01-01" max="2035-12-09" placeholder="Select Date"></ion-datetime>
+					  <ion-icon name="calendar" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none"lines="none">
+				      	<ion-label>Gender </ion-label>
+				      	<ion-select placeholder="Select One" formControlName="gender"> 
+				        	<ion-select-option value="Male">Male</ion-select-option>
+				        	<ion-select-option value="Female">Female</ion-select-option>
+				      	</ion-select>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>	
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Account Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none"lines="none">
+				      	<ion-label>Gender </ion-label>
+				      	<ion-select placeholder="Select One" formControlName="usertype"> 
+				        	<ion-select-option value="Admin">Admin</ion-select-option>
+				        	<ion-select-option value="User">User</ion-select-option>
+				      	</ion-select>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Username</ion-label>
+						<ion-input type="text" formControlName="uname"></ion-input>
+						<ion-icon name="person" slot="end" align-self-center></ion-icon>			
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Password</ion-label>
+						<ion-input type="text" formControlName="upass"></ion-input>
+						<ion-icon name="key" slot="end" align-self-center></ion-icon>	
+					</ion-item>
+				</ion-card-content>
+			</ion-card>				
+		</form>
+		<div style="text-align: center;">
+			<p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+		</div>
+		<div class="ion-padding">
+			<div style="text-align: center;">
+				<ion-button expand="full" shape="round" color="secondary" (click)="createAddAcc()">Submit</ion-button>
+			</div>
+		</div>
+	</div>
+</ion-content>

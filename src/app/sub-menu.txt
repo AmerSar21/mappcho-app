@@ -1,0 +1,249 @@
+html:
+<ion-app>
+  <ion-menu contentId="content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Categorie</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+            <ion-label>
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          <ion-list>
+            <ion-menu-toggle auto-hide="false" *ngFor="let s of p.subPages">
+              <ion-item [routerDirection]="'root'" [routerLink]="[s.url]">
+                <ion-label>
+                  {{s.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-app>
+
+<ion-app>
+  <ion-split-pane>
+    <ion-menu contentId="content">
+      
+      <!-- header -->
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <!-- body -->
+      <ion-content>
+        <div *ngFor="let p of appPages">
+            <ion-menu-toggle auto-hide="false" *ngIf="p.url">
+              <ion-item [routerLink]="[p.url]" [routerDirection]="'root'" routerLinkActive="active">
+                <ion-icon color="primary" slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{p.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <ion-item button *ngIf="p.children?.length > 0" (clicK)="p.open = !p.open" 
+              [class.active-parent]="p.open" detail="false">
+                <ion-icon color="primary" slot="start" name="arrow-forward" *ngIf="!p.open"></ion-icon>
+                <ion-icon color="primary" slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
+                <ion-label>{{p.title}}</ion-label>
+            </ion-item>
+            
+            <ion-list *ngIf="p.open">
+              <ion-menu-toggle auto-hide="false">
+                <ion-item class="sub-item" *ngFor="let sub of p.children" 
+                [routerLink]="[sub.url]" [routerDirection]="'root'" routerLinkActive="active">
+                  <ion-icon slot="start" [name]="sub.icon"></ion-icon>
+                  <ion-label>
+                    {{sub.title}}
+                  </ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            </ion-list>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content" main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+
+<ion-menu contentId="content" side="start" type="overlay">
+  <ion-content>
+   <ion-grid>
+    <h1>MENU</h1>
+   </ion-grid>
+   <ion-list>
+    <ion-item ion-item *ngFor="let p1 of pages1" (click)="toggleDetails(p1)" [ngStyle]="{'background': (p1.subPages != null) ? '#dcd5d5': null}">
+      <ion-icon name="{{p1.name1}}"></ion-icon>
+       <span *ngIf="p1.component === ''">{{p1.title1}}</span>
+       <span *ngIf="p1.component !== ''" menuClose (click)="openPage(p1)">{{p1.title1}}</span>
+       <ion-icon float-right *ngIf="p1.subPages != null" [name]="p1.icon" item-end></ion-icon>
+      <div *ngIf="p1.showDetails &&p1.subPages != null">
+        <ion-list>
+          <ion-item style="border-bottom: 1px solid #1f1c1c;background: #dcd5d5" ion-item *ngFor="let subP of p1.subPages">
+            <span (click)="openPage(subP)"  menuClose>{{subP.title1}}</span>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-item>
+   </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+functions:
+
+ openSubmenu(){
+    this.open = true;
+  }
+
+   openPage(p1){
+     this.rootPage = p1.component;
+   }
+
+   toggleDetails(p) {
+    if (p.showDetails) {
+        p.showDetails = false;
+        p.icon = 'ios-arrow-down';
+    } else {
+        p.showDetails = true;
+        p.icon = 'ios-arrow-up';
+
+    }
+  }
+
+  toggleInfo(){
+    this.open = !this.open;
+  }
+
+      {
+      title: 'Patient Records',
+      icon: 'paper',  
+      open: false,          
+      component: RecdashPage,
+      url: '/recdash',
+      children: null      
+    },
+
+
+  selectedPath = '';
+
+     <!-- <ion-list>
+              <ion-item ion-item *ngFor="let p1 of appPages" (click)="toggleDetails(p1)">
+                <ion-icon name="{{p1.icon}}"></ion-icon>
+                 <span *ngIf="p1.component === ''"></span>
+                 <span *ngIf="p1.component !== ''" menuClose (click)="openPage(p1)"></span>
+                 <ion-icon *ngIf="p1.subPages != null" item-end></ion-icon>
+                 <ion-label>{{p1.title}}</ion-label>
+
+                <div *ngIf="p1.open && p1.subPages != null">
+                  <ion-list>
+                    <ion-item ion-item *ngFor="let subP of p1.subPages">
+                      <span (click)="openPage(subP)" >{{subP.title}}</span>
+                    </ion-item>
+                  </ion-list>
+                </div>
+              </ion-item>
+             </ion-list>
+                   -->
+           <!--  <ion-item button (click)="openItem()">Open Button</ion-item>
+            <div *ngIf="open">
+              <ion-label>items are here..</ion-label>
+            </div>
+ -->
+           <!--  <ion-list>
+              <ion-item ion-item *ngFor="let p1 of appPages" (click)="toggleDetails(p1)">
+                <ion-icon name="{{p1.icon}}"></ion-icon>
+                 <span *ngIf="p1.component === ''">{{p1.title}}</span>
+                 <span *ngIf="p1.component !== ''" menuClose (click)="openPage(p1)"></span>
+                 <ion-icon float-right *ngIf="p1.subPages != null" item-end></ion-icon>
+                <div *ngIf="p1.showDetails && p1.subPages != null">
+                  <ion-list>
+                    <ion-item *ngFor="let subP of p1.subPages">
+                      <span (click)="openPage(subP)"  menuClose>{{subP.title}}</span>
+                    </ion-item>
+                  </ion-list>
+                </div>
+              </ion-item>
+             </ion-list> -->
+
+
+initializeApp() {
+    this.platform.ready().then(() => {
+
+     this.storage.get('session_storage').then((res) => {
+      this.anggota = res;
+      this.usertype = this.anggota.usertype;
+
+        if(this.usertype = 'admin'){
+
+          this.appPages = [
+              {
+                title: 'Home',
+                icon: 'home',
+                open: false,      
+                component: HomeAdminPage ,
+                url: '/home',
+                children: null
+              },
+              {
+                title: 'Profile',
+                icon: 'person',
+                open: false,            
+                component: ProfilePage,      
+                url: '/profile',
+                children: null     
+              }
+            ];
+
+        }else{
+          
+            this.appPages = [
+              {
+                title: 'Home',
+                icon: 'home',
+                open: false,      
+                component: HomePage,
+                url: '/home',
+                children: null
+              },
+              {
+                title: 'Profile',
+                icon: 'person',
+                open: false,            
+                component: ProfilePage,      
+                url: '/profile',
+                children: null     
+              },
+              {
+                title: 'Records',
+                icon: 'paper',
+                open: false,
+                component: '',     
+                children: [
+                  { title: 'Enrollment Record', open: false, icon: 'person-add', component: PatientrecordsPage, url: '/patientrecords', children: null},
+                  { title: 'Treatment Record', open: false, icon: 'create', component: IndivtreatrecPage, url: '/indivtreatrec', children: null }        
+                ]      
+              }
+            ];
+
+        }          
+     });      
+
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+
+    });
+  }

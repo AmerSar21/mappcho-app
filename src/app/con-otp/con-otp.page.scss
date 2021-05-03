@@ -1,0 +1,64 @@
+ion-card{
+   background-color: white;
+   box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+   padding: 10px;
+}
+
+ion-header{
+   box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);	
+}
+
+img{
+  padding: 50px 0px 50px 0px;
+	width: auto;
+	margin: auto;
+	display: block;
+}
+
+ion-content.background {
+   --background: url('/assets/images/menu-bg.png') no-repeat 80% 70%;
+   background-size: cover !important;
+   background-position: center center !important;
+   background-attachment: fixed !important;
+}
+
+ion-input {
+  border-bottom: solid 1px #d5d5d5;
+}
+
+p {
+    font-size: 0.8em;
+    color: #d2d2d2;
+}
+
+swiper-pagination-bullet {
+  --bullet-background: #00a0be;
+  width: 12px;
+  height: 12px;
+}
+
+swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+   --bullet-background: transparent;
+}
+
+swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 5%!important;
+}
+
+ion-slides {
+  height: 200%;
+}
+
+ion-slide {
+    display: block;
+}
+
+ion-label, .select-text {
+    margin-left: 10px;
+}
+
+.invalid {
+    border: 1px solid #ea6153;
+}

@@ -1,0 +1,40 @@
+<ion-header>
+  <div style="background-color: #0cd1e8;">
+  	<ion-toolbar color="secondary">
+  		<ion-buttons slot="start">
+		  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
+		  </ion-back-button>
+	    </ion-buttons>
+ 	</ion-toolbar>
+	<div>
+		<img src="assets/images/logo6.png" alt="logo">				
+	</div>
+  </div>
+</ion-header>
+
+<ion-content padding>
+	<div class="scroll" scrollY="true">
+		<ion-card>
+			<ion-card-header>	
+				<div style="text-align: center;">	
+					<h4><b>Account Verification</b></h4>						
+				</div>
+			</ion-card-header>
+			<ion-card-content>
+				<ion-item color="none" lines="none">
+					<ion-label><ion-icon name="flag" slot="start" align-self-center></ion-icon> Code: </ion-label>
+					<ion-input type="text" [(ngModel)]="code"></ion-input>
+				</ion-item>							
+			</ion-card-content>
+		</ion-card>	
+		<div style="text-align: center;">
+			<p *ngIf="codeVal" style="color: #ea6153;">Code Mismatch.</p>
+		</div>		
+		<div class="ion-padding">
+			<div style="text-align: center;">
+				<ion-button expand="full" shape="round" color="secondary" (click)="register()">Register</ion-button>
+				<p expand="block" padding>Didn't get the code?<br><a color="secondary" (click)="resendCode()">Resend Code</a></p>
+			</div>
+		</div>	
+	</div>
+</ion-content>

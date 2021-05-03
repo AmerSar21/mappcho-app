@@ -1,0 +1,24 @@
+ion-list{
+	background: #ededed;
+	margin: 16px;
+	overflow: visible;
+}
+
+p{
+	font-family: 'Century Gothic', san-serif;
+	margin-left: 15px;		
+}
+
+ion-toolbar {
+	text-align: center;
+	font-family: 'Century Gothic', san-serif;	
+}
+
+.background {
+	--background: url('/assets/images/menu-bg.png') no-repeat 100% 100% ;
+}
+
+ion-card{
+	background-color: white;
+	box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+}

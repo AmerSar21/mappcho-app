@@ -1,0 +1,8 @@
+{
+  "name": "mappcho",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

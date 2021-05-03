@@ -1,0 +1,185 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+	  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
+	  </ion-back-button>
+      <ion-title>ADD RECORD</ion-title>	  
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-input class="ion-hide" [(ngModel)]="uid" value="{{userid}}"></ion-input>
+		<div class="ion-padding">
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Patient Information</b></h4>
+					</div>
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Patient ID: </ion-label>
+						<ion-input type="text" [(ngModel)]="patid"></ion-input>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-buttons slot="start">
+							<p style="font-size: 12px;">Patient ID must Exist</p>
+				    	</ion-buttons>					
+						<ion-buttons slot="end">
+							<ion-button color="secondary" (click)="getPatientInfo()" fill="outline">Verify</ion-button>
+						</ion-buttons>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Age: </ion-label>
+						<ion-input type="text" [(ngModel)]="age"></ion-input>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>CHU/RHU Information</b></h4>
+					</div>
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item lines="none">
+						<ion-label>Mode of Transaction: </ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-select class="select-style" placeholder="Select.." [(ngModel)]="modeoftrans" (ionChange)="onChange(modeoftrans)">  
+				        	<ion-select-option value="Walk-in">Walk-in</ion-select-option>
+				        	<ion-select-option value="Visited">Visited</ion-select-option>
+				        	<ion-select-option value="Referral">Referral</ion-select-option>	
+				      	</ion-select>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-label>Consultation Date:</ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-datetime class="date-time" displayFormat="MM/DD/YYYY" [(ngModel)]="cdate" min="1950-01-01" max="2035-12-09" placeholder="Select Date"></ion-datetime>
+					  	<ion-icon style="margin-left: 2px;" name="calendar"></ion-icon>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-label>Consultation Time:</ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-datetime class="date-time" displayFormat="HH:mm" [(ngModel)]="ctime" min="1950-01-01" max="2035-12-09" placeholder="Select Time"></ion-datetime>
+						<ion-icon style="margin-left: 2px;" name="clock"></ion-icon>
+					</ion-item>	
+					<div *ngIf="!value">
+						<ion-item color="none">
+							<ion-label position="floating">Referred from: </ion-label>
+							<ion-input type="text" [(ngModel)]="reffrom"></ion-input>
+						</ion-item>
+						<ion-item color="none">
+							<ion-label position="floating">Referred to: </ion-label>
+							<ion-input type="text" [(ngModel)]="refto"></ion-input>
+						</ion-item>
+						<ion-item color="none">
+							<ion-label position="floating">Reason of Referral: </ion-label>
+							<ion-input type="text" [(ngModel)]="reason"></ion-input>
+						</ion-item>
+						<ion-item color="none">
+							<ion-label position="floating">Reffered by: </ion-label>
+							<ion-input type="text" [(ngModel)]="reasby"></ion-input>
+						</ion-item>
+					</div>
+					<ion-item color="none">
+						<ion-label position="floating">Blood Pressure: </ion-label>
+						<ion-input type="text" [(ngModel)]="bloodp" placeholder="e.g 120-80"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Height(cm): </ion-label>
+						<ion-input type="text" [(ngModel)]="height" placeholder="e.g 160 cm"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Temperature: </ion-label>
+						<ion-input type="text" [(ngModel)]="temp" placeholder="e.g 36 degree C"></ion-input>
+					</ion-item>
+					<ion-item color="none">				
+						<ion-label position="floating">Weight(kg): </ion-label>
+						<ion-input type="text" [(ngModel)]="weight" placeholder="e.g 50 kg"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Attending Officer: </ion-label>
+						<ion-input type="text" [(ngModel)]="attofficer"></ion-input>
+					</ion-item>				
+				</ion-card-content>
+			</ion-card>
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Other Information</b></h4>
+					</div>
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item lines="none">
+						<ion-label>Nature of Visit: </ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-select class="select-style" placeholder="Select One" [(ngModel)]="natofvis"> 
+							<ion-select-option value="New Consultation/Case">New Consultation/Case</ion-select-option>
+				        	<ion-select-option value="New Admission">New Admission</ion-select-option>
+				        	<ion-select-option value="Follow up visit">Follow up visit</ion-select-option>
+				        	<ion-select-option value="General">General</ion-select-option>
+				        	<ion-select-option value="Prenatal">Prenatal</ion-select-option>
+				        	<ion-select-option value="Dental Care">Dental Care</ion-select-option>
+				        	<ion-select-option value="Child Care">Child Care</ion-select-option>
+				        	<ion-select-option value="Child Nutrition">Child Nutrition</ion-select-option>
+				        	<ion-select-option value="Injury">Injury</ion-select-option>
+				        	<ion-select-option value="Adult Immunization">Adult Immunization</ion-select-option>
+				        	<ion-select-option value="Family Planning">Family Planning</ion-select-option>
+				        	<ion-select-option value="Postpartum">Postpartum</ion-select-option>
+				        	<ion-select-option value="Tuberculosis">Tuberculosis</ion-select-option>
+				        	<ion-select-option value="Child Immunization">Child Immunization</ion-select-option>
+				        	<ion-select-option value="Sick Children">Sick Children</ion-select-option>
+				        	<ion-select-option value="Firecracker Injury">Firecracker Injury</ion-select-option>							
+				      	</ion-select>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Health Care Personnel: </ion-label>
+						<ion-input type="text" [(ngModel)]="hcprov"></ion-input>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-label>Chief Complaints: </ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-textarea placeholder="Enter text here.." type="text" [(ngModel)]="compl"></ion-textarea>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-label>Diagnosis: </ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-textarea placeholder="Enter text here.." type="text" [(ngModel)]="diagnosis"></ion-textarea>
+					</ion-item>		
+					<ion-item lines="none">
+						<ion-label>Laboratory Test: </ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-textarea placeholder="Enter text here.." type="text" [(ngModel)]="labtest"></ion-textarea>
+					</ion-item>					
+					<ion-item lines="none">
+						<ion-label>Medication/Treatment: </ion-label>
+						
+					</ion-item>
+					<ion-item lines="none">
+						<ion-textarea placeholder="Enter text here.." type="text" [(ngModel)]="medtreat"></ion-textarea>
+					</ion-item>					
+					<ion-item lines="none">
+						<ion-label>Lab Findings/Impressions: </ion-label>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-textarea placeholder="Enter text here.." type="text" [(ngModel)]="labfindings"></ion-textarea>
+					</ion-item>	
+				</ion-card-content>
+			</ion-card>
+			<div class="ion-padding">
+				<div style="text-align: center;">
+					<ion-button expand="full" shape="round" color="secondary" (click)="createAddItr()">Submit</ion-button>
+				</div>
+			</div>	
+		</div>
+	</ion-grid>
+</ion-content>

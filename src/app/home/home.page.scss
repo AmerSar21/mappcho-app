@@ -1,0 +1,55 @@
+.background {
+	--background: url('/assets/images/logo5.png') no-repeat center center fixed;
+  background-size: cover !important;    
+}
+
+.text-style {
+	font-family: 'Century Gothic', san-serif;					
+}
+
+.list-text-font{
+	background: transparent;
+	font-family: 'Century Gothic', san-serif;
+}
+
+ion-toolbar {
+	text-align: center;
+	font-family: 'Century Gothic', san-serif;	
+}
+
+.box-content {
+	margin-bottom: 12px;
+	background: transparent;
+}
+
+ion-icon{
+	font-size: 5em;
+}
+
+ion-item{
+	--highlight-background: unset;	
+}
+
+.button-layout{
+	background-color: white;
+	border-radius: 12px;
+	margin-right: 20px;
+	margin-left: 16px;
+	font-family: 'Century Gothic', san-serif;	
+}
+
+.square-button {
+    height: 100px;
+    --vertical-align: middle;
+    --padding-start: 50px;
+    --padding-end: 50px;
+    --ripple-color: darkcyan;
+    --padding-bottom: 2px !important;
+    --box-shadow: none;
+}
+
+.vertical {
+	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+}

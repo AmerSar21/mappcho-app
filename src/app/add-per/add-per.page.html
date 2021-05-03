@@ -1,0 +1,322 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+	  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
+	  </ion-back-button>
+      <ion-title>Add Record</ion-title>	  
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-input class="ion-hide" [(ngModel)]="uid" value="{{userid}}"></ion-input>
+		<div class="ion-padding">
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Patient Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Patient ID</ion-label>
+						<ion-input type="text" [(ngModel)]="pat_id"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Family Serial No.</ion-label>
+						<ion-input type="text" [(ngModel)]="fcode"></ion-input>				
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Personal Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Last Name</ion-label>
+						<ion-input type="text" [(ngModel)]="lname"></ion-input>
+						<ion-icon name="document-text-outline" slot="end" align-self-center></ion-icon>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">First Name</ion-label>
+						<ion-input type="text" [(ngModel)]="fname"></ion-input>				
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Middle Name</ion-label>
+						<ion-input type="text" [(ngModel)]="mname"></ion-input>				
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Suffix</ion-label>
+						<ion-input type="text" [(ngModel)]="suffix"></ion-input>				
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Birth Place</ion-label>
+						<ion-input type="text" [(ngModel)]="bplace"></ion-input>				
+					</ion-item>															
+					<ion-item color="none" lines="none">
+					  <ion-label>Birth Date</ion-label>
+					  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="bdate" min="1950-01-01" max="2035-12-09" placeholder="Select Date"></ion-datetime>
+					  <ion-icon style="margin-left: 2px;" name="calendar"></ion-icon>
+					</ion-item>
+					<ion-item color="none" lines="none">
+				      	<ion-label>Gender </ion-label>
+				      	<ion-select placeholder="Select.." [(ngModel)]="gender"> 
+				        	<ion-select-option value="male">Male</ion-select-option>
+				        	<ion-select-option value="female">Female</ion-select-option>
+				      	</ion-select>					
+				    </ion-item>		
+					<ion-item color="none">
+						<ion-label position="floating">Bloodtype </ion-label>						
+						<ion-input type="text" [(ngModel)]="bltype"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Civil Status </ion-label>
+						<ion-input type="text" [(ngModel)]="cstat"></ion-input>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Contact Information</b></h4>
+					</div>	
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Spouse Name </ion-label>
+						<ion-input type="text" [(ngModel)]="spname"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Mother's Name </ion-label>
+						<ion-input type="text" [(ngModel)]="motname"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Contact Number </ion-label>
+						<ion-input type="text" [(ngModel)]="contnum"></ion-input>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>Residential Address</b></h4>
+					</div>	
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item color="none">
+						<ion-label position="floating">Home No.</ion-label>
+						<ion-input type="text" [(ngModel)]="homeno"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Street</ion-label>
+						<ion-input type="text" [(ngModel)]="street"></ion-input>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-label>Barangay</ion-label>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-select class="select-style" placeholder="Select One" [(ngModel)]="brgy"> 
+				        	<ion-select-option value="Ambolong">Ambolong</ion-select-option>
+				        	<ion-select-option value="Amito Marantao">Amito Marantao</ion-select-option>
+				        	<ion-select-option value="Bacolod Chico Proper">Bacolod Chico Proper</ion-select-option>
+				        	<ion-select-option value="Banga">Banga</ion-select-option>
+				        	<ion-select-option value="Bangco">Bangco</ion-select-option>
+				        	<ion-select-option value="Banggolo Poblacion">Banggolo Poblacion</ion-select-option>
+				        	<ion-select-option value="Bangon">Bangon</ion-select-option>
+				        	<ion-select-option value="Basak Malutlut">Basak Malutlut</ion-select-option>
+				        	<ion-select-option value="Biaba-Damag">Biaba-Damag</ion-select-option>
+				        	<ion-select-option value="Bito Buadi Itowa">Bito Buadi Itowa</ion-select-option>
+				        	<ion-select-option value="Bito Buadi Parba">Bito Buadi Parba</ion-select-option>
+				        	<ion-select-option value="Boganga">Boganga</ion-select-option>
+				        	<ion-select-option value="Boto Ambolong">Boto Ambolong</ion-select-option>
+				        	<ion-select-option value="Buadi Sacayo">Buadi Sacayo</ion-select-option>
+				        	<ion-select-option value="Bubong Lumbac">Bubong Lumbac</ion-select-option>
+				        	<ion-select-option value="Bubonga Cadayonan">Bubonga Cadayonan</ion-select-option>
+				        	<ion-select-option value="Bubonga Lilod Madaya">Bubonga Lilod Madaya</ion-select-option>
+				        	<ion-select-option value="Bubonga Marawi">Bubonga Marawi</ion-select-option>
+				        	<ion-select-option value="Bubonga Pagalamatan">Bubonga Pagalamatan</ion-select-option>
+				        	<ion-select-option value="Bubonga Punod">Bubonga Punod</ion-select-option>
+				        	<ion-select-option value="Cabasaran">Cabasaran</ion-select-option>
+				        	<ion-select-option value="Cabingan">Cabingan</ion-select-option>
+				        	<ion-select-option value="Cadayonan">Cadayonan</ion-select-option>
+				        	<ion-select-option value="Cadayonan I">Cadayonan I</ion-select-option>
+				        	<ion-select-option value="Calocan East">Calocan East</ion-select-option>
+				        	<ion-select-option value="Calocan West">Calocan West</ion-select-option>
+				        	<ion-select-option value="Daguduban">Daguduban</ion-select-option>
+				        	<ion-select-option value="Dansalan">Dansalan</ion-select-option>
+				        	<ion-select-option value="Datu Naga">Datu Naga</ion-select-option>
+				        	<ion-select-option value="Datu Sa Dansalan">Datu Sa Dansalan</ion-select-option>
+				        	<ion-select-option value="Datu Saber">Datu Saber</ion-select-option>
+				        	<ion-select-option value="Dayawan">Dayawan</ion-select-option>
+				        	<ion-select-option value="Dimaluna">Dimaluna</ion-select-option>				        	
+				        	<ion-select-option value="Dulay">Dulay</ion-select-option>
+				        	<ion-select-option value="Dulay West">Dulay West</ion-select-option>
+				        	<ion-select-option value="East Basak">East Basak</ion-select-option>
+				        	<ion-select-option value="Emie Punud">Emie Punud</ion-select-option>
+				        	<ion-select-option value="Fort">Fort</ion-select-option>
+				        	<ion-select-option value="Gadongan">Gadongan</ion-select-option>
+				        	<ion-select-option value="Gadongan Mapantao">Gadongan Mapantao</ion-select-option>
+				        	<ion-select-option value="Guimba">Guimba</ion-select-option>
+				        	<ion-select-option value="Kapantaran">Kapantaran</ion-select-option>
+				        	<ion-select-option value="Kilala">Kilala</ion-select-option>
+				        	<ion-select-option value="Kormatan Matampay">Kormatan Matampay</ion-select-option>
+				        	<ion-select-option value="Lancaf">Lancaf</ion-select-option>
+				        	<ion-select-option value="Lilod Madaya">Lilod Madaya</ion-select-option>
+				        	<ion-select-option value="Lildo Saduc">Lilod Saduc</ion-select-option>
+				        	<ion-select-option value="Lomidong">Lomidong</ion-select-option>
+				        	<ion-select-option value="Lumbac Marinaut">Lumbac Marinaut</ion-select-option>
+				        	<ion-select-option value="Lumbaca Madaya">Lumbaca Madaya</ion-select-option>
+				        	<ion-select-option value="Lumbaca Toros">Lumbaca Toros</ion-select-option>
+				        	<ion-select-option value="Malimono">Malimono</ion-select-option>
+				        	<ion-select-option value="Marawi Poblacion">Marawi Poblacion</ion-select-option>
+				        	<ion-select-option value="Marinaut East">Marinaut East</ion-select-option>
+				        	<ion-select-option value="Marinaut West">Marinaut West</ion-select-option>
+				        	<ion-select-option value="Matampay">Matampay</ion-select-option>
+				        	<ion-select-option value="Mipaga Proper">Mipaga Proper</ion-select-option>
+				        	<ion-select-option value="Moncado Colony">Moncado Colony</ion-select-option>
+				        	<ion-select-option value="Moncado Kadingilan">Moncado Kadingilan</ion-select-option>
+				        	<ion-select-option value="Moriatao Loksadatu">Moriatao Loksadatu</ion-select-option>
+				        	<ion-select-option value="Norhaya Village">Norhaya Village</ion-select-option>
+				        	<ion-select-option value="Olawa Ambolong">Olawa Ambolong</ion-select-option>
+				        	<ion-select-option value="Pagalamatan Gambal">Pagalamatan Gambal</ion-select-option>
+				        	<ion-select-option value="Pagayawan">Pagayawan</ion-select-option>
+				        	<ion-select-option value="Panggao Saduc">Panggao Saduc</ion-select-option>
+				        	<ion-select-option value="PapandayanPoblacion">Papandayan</ion-select-option>
+				        	<ion-select-option value="Papandayan Caniogan">Papandayan Caniogan</ion-select-option>
+				        	<ion-select-option value="Paridi">Paridi</ion-select-option>
+				        	<ion-select-option value="Patani">Patani</ion-select-option>
+				        	<ion-select-option value="Pindolonan">Pindolonan</ion-select-option>
+				        	<ion-select-option value="Poona Marantao">Poona Marantao</ion-select-option>
+				        	<ion-select-option value="Pugaan">Pugaan</ion-select-option>
+				        	<ion-select-option value="Rapasun MSU">Rapasun MSU</ion-select-option>
+				        	<ion-select-option value="Raya Madaya I">Raya Madaya I</ion-select-option>
+				        	<ion-select-option value="Raya Madaya II">Raya Madaya II</ion-select-option>
+				        	<ion-select-option value="Raya Saduc">Raya Saduc</ion-select-option>
+				        	<ion-select-option value="Rorogagus East">Rorogagus East</ion-select-option>
+				        	<ion-select-option value="Rorogagus West">Rorogagus Proper</ion-select-option>
+				        	<ion-select-option value="Sabala Manao">Sabala Manao</ion-select-option>
+				        	<ion-select-option value="Sabala Manao Proper">Sabala Manao Proper</ion-select-option>
+				        	<ion-select-option value="Saduc Proper">Saduc Proper</ion-select-option>
+				        	<ion-select-option value="Sagonsongan">Sagonsongan</ion-select-option>
+				        	<ion-select-option value="Sangcay Dansalan">Sangcay Dansalan</ion-select-option>
+				        	<ion-select-option value="Somiorang">Somiorang</ion-select-option>
+				        	<ion-select-option value="South Madaya Proper">South Madaya Proper</ion-select-option>
+				        	<ion-select-option value="Sugod Proper">Sugod Proper</ion-select-option>
+				        	<ion-select-option value="Tampilong">Tampilong</ion-select-option>
+				        	<ion-select-option value="Timbangalan">Timbangalan</ion-select-option>
+				        	<ion-select-option value="Tolali">Tolali</ion-select-option>
+				        	<ion-select-option value="Tongantongan-Tuca Timbang">Tongantongan-Tuca Timbang</ion-select-option>
+				        	<ion-select-option value="Toros">Toros</ion-select-option>
+				        	<ion-select-option value="Tuca Ambolong">Tuca Ambolong</ion-select-option>
+				        	<ion-select-option value="Tuca Marinaut">Tuca Marinaut</ion-select-option>
+				        	<ion-select-option value="Wawalayan Calocan">Wawalayan Calocan</ion-select-option>
+				        	<ion-select-option value="Wawalayan Marinaut">Wawalayan Marinaut</ion-select-option>
+				      	</ion-select>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">City</ion-label>
+						<ion-input type="text" [(ngModel)]="city"></ion-input>
+					</ion-item>
+					<ion-item color="none">
+						<ion-label position="floating">Province</ion-label>
+						<ion-input type="text" [(ngModel)]="prov"></ion-input>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-label>Educational Attainment</ion-label>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-select class="select-style" placeholder="Select One" [(ngModel)]="edatt"> 
+				        	<ion-select-option value="No Formal Education">No Formal Education</ion-select-option>
+				        	<ion-select-option value="College">College</ion-select-option>
+				        	<ion-select-option value="Highschool">Highschool</ion-select-option>
+				        	<ion-select-option value="Elementary">Elementary</ion-select-option>
+				        	<ion-select-option value="Vocational">Vocational</ion-select-option>
+				        	<ion-select-option value="Post-Graduate">Post-Graduate</ion-select-option>
+				      	</ion-select>						
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-label>Employment Status</ion-label>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-select class="select-style" placeholder="Select One" [(ngModel)]="empstat"> 
+				        	<ion-select-option value="Unknown">Unknown</ion-select-option>
+				        	<ion-select-option value="Retired">Retired</ion-select-option>
+				        	<ion-select-option value="Employed">Employed</ion-select-option>
+				        	<ion-select-option value="Student">Student</ion-select-option>
+				        	<ion-select-option value="Unemployed">None/Unemployed</ion-select-option>
+				      	</ion-select>
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-label>Family Position</ion-label>						
+					</ion-item>
+					<ion-item color="none" lines="none">
+						<ion-select class="select-style" placeholder="Select One" [(ngModel)]="fampos"> 
+				        	<ion-select-option value="Father">Father</ion-select-option>
+				        	<ion-select-option value="Mother">Mother</ion-select-option>
+				        	<ion-select-option value="Son">Son</ion-select-option>
+				        	<ion-select-option value="Daughter">Daughter</ion-select-option>
+				      	</ion-select>	
+					</ion-item>										
+				</ion-card-content>
+			</ion-card>
+			<ion-card>
+				<ion-card-header>
+					<div style="text-align: center;">
+						<h4><b>CHU/RHU Information</b></h4>
+					</div>					
+				</ion-card-header>
+				<ion-card-content>
+					<ion-item lines="none">
+						<ion-label>DSWD NHTS </ion-label>					
+						<ion-select placeholder="Select.." [(ngModel)]="nhts"> 
+					    	<ion-select-option value="Yes">Yes</ion-select-option>
+					    	<ion-select-option value="No">No</ion-select-option>
+					  	</ion-select>
+					</ion-item>					
+					<ion-item color="none">
+						<ion-label position="floating">Household No</ion-label>
+						<ion-input type="text" [(ngModel)]="fhno"></ion-input>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-label>Philhealth Member</ion-label>				
+					</ion-item>				
+					<ion-item lines="none">
+						<ion-select class="select-style" placeholder="Select One" [(ngModel)]="phmem"> 
+					    	<ion-select-option value="Yes">Yes</ion-select-option>
+					    	<ion-select-option value="No">No</ion-select-option>
+					  	</ion-select>						
+					</ion-item>											
+					<div *ngIf="phmem == 'Yes'">
+						<ion-item color="none">
+							<ion-label position="floating">PhilHealth No</ion-label>				
+							<ion-input type="text" [(ngModel)]="phnum"></ion-input>
+						</ion-item>
+						<ion-item lines="none" style="text-align: center">
+							<ion-label>If member, please identify category</ion-label>
+						</ion-item>
+						<ion-item lines="none">
+							<ion-label>Member Category</ion-label>
+						</ion-item>
+						<ion-item lines="none">
+							<ion-select class="select-style" placeholder="Select.." [(ngModel)]="ctgry"> 
+						    	<ion-select-option value="none">Not Member</ion-select-option>
+						    	<ion-select-option value="FE-Private">FE-Private</ion-select-option>
+						    	<ion-select-option value="FE-Government">FE-Government</ion-select-option>
+						    	<ion-select-option value="IE">IE</ion-select-option>
+						  	</ion-select>
+						</ion-item>
+					</div>
+				</ion-card-content>
+			</ion-card>
+			<div class="ion-padding">
+				<div style="text-align: center;">
+					<ion-button expand="full" shape="round" color="secondary" (click)="createAddPer()">Submit</ion-button>
+				</div>
+			</div>					
+		</div>
+	</ion-grid>
+</ion-content>
