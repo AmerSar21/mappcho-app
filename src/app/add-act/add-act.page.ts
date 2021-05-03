@@ -127,11 +127,9 @@ export class AddActPage implements OnInit {
               console.log('Failed');                  
             }
           },async err => {
-            this.events.publish('user: isLoggedOut');                            
-            this.storage.clear();
-            this.router.navigate(['/login']);
+            this.apiwatcher.loadingDismiss();
             const toast = await this.toastCtrl.create({
-              message: 'Connection Error.',
+              message: 'Server timed out.',
               duration: 2000
             });
             toast.present();     

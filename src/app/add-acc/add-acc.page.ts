@@ -102,9 +102,13 @@ export class AddAccPage implements OnInit {
             }); 
             toast.present();                  
           }
-          console.log('OK');
-        },async err => {
-          console.log('message: ', err);
+        }, async error => {
+            this.apiwatcher.loadingDismiss();
+            const toast = await this.toastCtrl.create({
+              message: 'Server timed out.',
+              duration: 2000
+            }); 
+            toast.present();                  
         });
       });
     }

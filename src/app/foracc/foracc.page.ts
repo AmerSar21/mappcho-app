@@ -93,7 +93,7 @@ export class ForaccPage implements OnInit {
       try{
         let body = {
           action : 'checkAcc',
-          uname: username
+          uname: uname
         };
         console.log('post body: ', body);
         this.postPvdr.postData(body, 'proses-api.php').subscribe(async data => {

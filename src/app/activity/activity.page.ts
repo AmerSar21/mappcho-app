@@ -204,11 +204,8 @@ export class ActivityPage implements OnInit {
             console.log('OK');
           }, async err => {
             this.apiwatcher.loadingDismiss();
-            this.events.publish('user: isLoggedOut');              
-            this.ionStorage.clear();
-            this.router.navigate(['/login']);
             const toast = await this.toastCtrl.create({
-              message: 'Connection Error.',
+              message: 'Server timed out.',
               duration: 2000
             });
             toast.present();

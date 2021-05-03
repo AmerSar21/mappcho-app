@@ -76,6 +76,19 @@ export class PatientrecordsPage implements OnInit {
     });
   }
 
+  doRefresh(event) {
+    try{
+      this.ionViewWillEnter();
+      console.log('Begin async operation');
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        event.target.complete();
+      }, 2000);
+    }catch(e){
+      console.log('Error: ', e.message);
+    }
+  } 
+
   //capacitor working on native
   async fileWrite() {
     try {
@@ -313,7 +326,13 @@ export class PatientrecordsPage implements OnInit {
               }); 
               toast.present();                  
             }
-            console.log('OK');
+          }, async error => {
+              this.apiwatcher.loadingDismiss();
+              const toast = await this.toastCtrl.create({
+                message: 'Server timed out.',
+                duration: 2000
+              }); 
+              toast.present();                  
           });  
         }catch(e){
           console.log('Error Message: ',e);

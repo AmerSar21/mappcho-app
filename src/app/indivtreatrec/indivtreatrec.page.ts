@@ -97,6 +97,19 @@ export class IndivtreatrecPage implements OnInit {
     });
   }
 
+  doRefresh(event) {
+    try{
+      this.ionViewWillEnter();
+      console.log('Begin async operation');
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        event.target.complete();
+      }, 2000);
+    }catch(e){
+      console.log('Error: ', e.message);
+    }
+  } 
+
   async fileWrite() {
     try {
       if(this.itrlists === undefined || this.itrlists.length === 0){
@@ -312,10 +325,9 @@ export class IndivtreatrecPage implements OnInit {
             }
           }, async error =>{
             this.apiwatcher.loadingDismiss();
-            console.log('Message: ',error);
             const alert = await this.alertController.create({
               cssClass: 'my-custom-class',
-              header: 'Warning!',
+              header: 'Server timed out.',
               message: error,
               backdropDismiss: true
             });

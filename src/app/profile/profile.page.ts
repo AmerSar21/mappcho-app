@@ -18,6 +18,7 @@ export class ProfilePage implements OnInit {
   gender: string;
   usertype: string;
   email: string;
+  address: string;
   anggota: any;
 
   constructor(
@@ -38,6 +39,7 @@ export class ProfilePage implements OnInit {
       this.gender = this.anggota.gender;
       this.usertype = this.anggota.usertype;
       this.email = this.anggota.email;
+      this.address = this.anggota.address;
     });
   }
   

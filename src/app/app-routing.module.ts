@@ -13,7 +13,6 @@ const routes: Routes = [
   { path: 'foracc', loadChildren: './foracc/foracc.module#ForaccPageModule' },
   { path: 'accounts', loadChildren: './accounts/accounts.module#AccountsPageModule' },
   { path: 'home-admin', loadChildren: './home-admin/home-admin.module#HomeAdminPageModule' },
-  { path: 'recdash', loadChildren: './recdash/recdash.module#RecdashPageModule' },
   { path: 'add-itr', loadChildren: './add-itr/add-itr.module#AddItrPageModule' },
   { path: 'add-per', loadChildren: './add-per/add-per.module#AddPerPageModule' },  
   { path: 'upd-itr', loadChildren: './upd-itr/upd-itr.module#UpdItrPageModule' },

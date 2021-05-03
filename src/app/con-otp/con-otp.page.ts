@@ -126,7 +126,7 @@ export class ConOtpPage implements OnInit {
           console.log('Error Message: ',err);
           this.apiwatcher.loadingDismiss();
             const toast = await this.toastCtrl.create({
-              message: err,
+              message: 'Server timed out.',
               duration: 2000
             }); 
             toast.present();  

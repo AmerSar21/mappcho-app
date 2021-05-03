@@ -21,6 +21,12 @@
         <ion-searchbar (ionChange)="searchFiltered($event)"></ion-searchbar>
       </ion-buttons>          
     </ion-toolbar>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <div padding-top>
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline"
+          refreshingSpinner="circles"></ion-refresher-content>
+      </div>
+    </ion-refresher>   
     <ion-list class="box-content">
       <div *ngIf="ilist && ilist.length > 0">
         <ion-item-sliding *ngFor="let itrlist of ilist">

@@ -111,6 +111,13 @@ export class UpdActPage implements OnInit {
             toast.present();                  
           }
           console.log('OK');
+        },async err => {
+            this.apiwatcher.loadingDismiss();
+            const toast = await this.toastCtrl.create({
+              message: 'Server timed out.',
+              duration: 2000
+            });
+            toast.present();
         });
       }catch(e){
         this.apiwatcher.loadingDismiss();        
