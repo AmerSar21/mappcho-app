@@ -12,7 +12,6 @@ import { HomeAdminPage } from './home-admin/home-admin.page';
 import { ActivityPage } from './activity/activity.page';
 import { AccountsPage } from './accounts/accounts.page';
 import { ProfilePage } from './profile/profile.page';
-import { RecdashPage } from './recdash/recdash.page';
 import { ActivityAllPage } from './activity-all/activity-all.page';
 import { PatientrecordsPage } from './patientrecords/patientrecords.page';
 import { IndivtreatrecPage } from './indivtreatrec/indivtreatrec.page';
