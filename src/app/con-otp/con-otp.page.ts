@@ -67,15 +67,15 @@ export class ConOtpPage implements OnInit {
         this.apiwatcher.loadingDismiss();
         this.codeVal = false; 
         this.storage.get('User_info').then(res => {
-          const uname = res.uname;
-          const upass = res.upass;
-          const fname = res.fname;
-          const lname = res.lname;
-          const bdate = res.bdate;
-          const gender = res.gender;
-          const email = res.email;
-          const contnum = res.contnum;
-          const address = res.address;
+          var uname = res.uname;
+          var upass = res.upass;
+          var fname = res.fname;
+          var lname = res.lname;
+          var bdate = res.bdate;
+          var gender = res.gender;
+          var email = res.email;
+          var contnum = res.contnum;
+          var address = res.address;
           this.registerAcc(uname,upass,fname,lname,contnum,bdate,gender,email,address);
           this.storage.clear();         
         });
