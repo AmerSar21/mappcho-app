@@ -105,6 +105,29 @@ export class ApiWatcherService {
     });
   }
 
+  checkUsername(uname): any {
+    return new Promise(resolve => {
+      try{
+        let body = {
+          action : 'checkAcc',
+          uname: uname
+        };
+        // console.log('post body: ', body);
+        this.postPvdr.postData(body, 'proses-api.php').subscribe(async data => {
+          if(data.success){ 
+            await resolve(data.success);
+          }else{
+            await resolve(data.success);            
+          }
+        },err => {
+          console.log('Message Error: ',err);
+        });  
+      }catch(e){
+        console.log('Error Message: ',e);
+      }
+    });
+  }
+
   clearPerList(){
     this.perlists = [];
   }
