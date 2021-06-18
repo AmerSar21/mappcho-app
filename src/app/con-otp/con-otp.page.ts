@@ -29,11 +29,13 @@ export class ConOtpPage implements OnInit {
     public smsapi: SmsApiService, 
     public toastCtrl: ToastController  
   	) {}
-  
-  ionViewWillEnter(){
-  }
 
   ngOnInit() {
+    this.menuCtrl.enable(false);
+  }
+
+  ionViewWillEnter(){
+    this.menuCtrl.enable(false);
   }
 
   resendCode(){

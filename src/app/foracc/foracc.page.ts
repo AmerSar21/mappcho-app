@@ -53,6 +53,7 @@ export class ForaccPage implements OnInit {
   }
 
   ngOnInit() {
+    this.menuCtrl.enable(false);
   }
 
   ionViewWillEnter() {
