@@ -34,7 +34,7 @@ export class HomeAdminPage implements OnInit {
   }
 
   ngOnInit() {
-
+    this.ionViewWillEnter();
   }
 
   ionViewWillEnter(){
