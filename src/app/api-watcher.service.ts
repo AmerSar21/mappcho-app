@@ -186,7 +186,7 @@ export class ApiWatcherService {
   async loadingPres2() {
     this.isLoading = true;
     return await this.loadingController.create({
-      message: 'loading...',
+      message: '',
       spinner: 'circles',
       cssClass: 'my-loading-class'
     }).then(a => {
