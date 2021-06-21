@@ -1,9 +1,4 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/mergeMapTo';
-import 'rxjs/add/operator/map'; 
+import { Injectable } from '@angular/core'; 
 import { Router } from '@angular/router';
 import { ToastController, MenuController, AlertController, Events, LoadingController } from '@ionic/angular';
 import { format } from 'date-fns';

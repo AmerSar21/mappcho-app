@@ -4,8 +4,6 @@ import { PostProvider } from '../../providers/post-provider';
 import { ToastController, MenuController, Events } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from '@ionic/angular';
-import { Observable, Subscription } from 'rxjs';
-import { Subject } from 'rxjs/Subject';
 import { ApiWatcherService } from '../api-watcher.service';
 
 @Component({
@@ -17,7 +15,6 @@ export class HomeAdminPage implements OnInit {
 
   fullname: string;
   anggota: any;
-  subs: Subscription;
   notif = '';
 
   constructor(
