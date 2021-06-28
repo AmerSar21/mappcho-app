@@ -73,78 +73,78 @@ export class LoginPage implements OnInit {
   async processLogin(){
     if(this.username != "" && this.password != ""){
       this.apiwatcher.loadingPres2();
-      try{
-        let body = {
-          username: this.username,
-          password: this.password,
-          action: 'login'
-        };
-        this.postPvdr.postData(body, 'proses-api.php').subscribe(async data =>
-        {
-          var alertmsg = data.msg;
-          if(data.success){
-            const result = await data.result;
-            console.log(result);
-            this.ionStorage.set('session_storage', result); 
-            const userType = await data.result.usertype;
-            try{
-              if(userType == "Admin"){
-                this.apiwatcher.loadingDismiss();
-                this.submitAttempt = false;
-                this.isActive = false;
-                this.doesExist = false;
-                this.checkCon = false;
-                this.events.publish('user: isAdmin');
-                this.router.navigate(['/home-admin']);
-                const toast = await this.toastCtrl.create({
-                  message: 'Login Successful',
-                  duration: 2000
-                });
-                toast.present();                   
-              }else if(userType == "User"){
-                this.apiwatcher.loadingDismiss(); 
-                this.submitAttempt = false;
-                this.isActive = false;
-                this.doesExist = false;
-                this.checkCon = false;                   
-                this.events.publish('user: isUser');
-                this.router.navigate(['/home']);
-                const toast = await this.toastCtrl.create({
-                  message: 'Login Successful',
-                  duration: 2000
-                }); 
-                toast.present();
-              }else{
-                this.apiwatcher.loadingDismiss();
-              }
-            }catch(e){         
-              console.log(e.message);
+      let body = {
+        username: this.username,
+        password: this.password,
+        action: 'login'
+      };
+
+      this.postPvdr.postData(body, 'proses-api.php').subscribe(async data =>
+      {
+        console.log('Issue: ', data);
+        var alertmsg = data.msg;
+        if(data.success){
+          const result = await data.result;
+          console.log(result);
+          this.ionStorage.set('session_storage', result); 
+          const userType = await data.result.usertype;
+          try{
+            if(userType == "Admin"){
+              this.apiwatcher.loadingDismiss();
+              this.submitAttempt = false;
+              this.isActive = false;
+              this.doesExist = false;
+              this.checkCon = false;
+              this.events.publish('user: isAdmin');
+              this.router.navigate(['/home-admin']);
+              const toast = await this.toastCtrl.create({
+                message: 'Login Successful',
+                duration: 2000
+              });
+              toast.present();                   
+            }else if(userType == "User"){
+              this.apiwatcher.loadingDismiss(); 
+              this.submitAttempt = false;
+              this.isActive = false;
+              this.doesExist = false;
+              this.checkCon = false;                   
+              this.events.publish('user: isUser');
+              this.router.navigate(['/home']);
+              const toast = await this.toastCtrl.create({
+                message: 'Login Successful',
+                duration: 2000
+              }); 
+              toast.present();
+            }else{
+              this.apiwatcher.loadingDismiss();
             }
-          }else if((!data.success && alertmsg == 'Account Inactive')){
-            this.apiwatcher.loadingDismiss();
-            this.doesExist = false;
-            this.submitAttempt = false;
-            this.checkCon = false
-            this.isActive = true;
-          }else if((!data.success && alertmsg == 'Account doesnt Exist')){
-            this.apiwatcher.loadingDismiss();
-            this.submitAttempt = false;
-            this.checkCon = false; 
-            this.isActive = false;
-            this.doesExist = true;
+          }catch(e){         
+            console.log(e.message);
           }
-        }, async onError => { 
+        }else if((!data.success && alertmsg == 'Account Inactive')){
           this.apiwatcher.loadingDismiss();
-          console.log('Message error: ', onError);
           this.doesExist = false;
           this.submitAttempt = false;
-          this.isActive = false
-          this.checkCon = true;
-        });
-      }catch(e){          
+          this.checkCon = false
+          this.isActive = true;
+        }else if((!data.success && alertmsg == 'Account doesnt Exist')){
+          this.apiwatcher.loadingDismiss();
+          this.submitAttempt = false;
+          this.checkCon = false; 
+          this.isActive = false;
+          this.doesExist = true;
+        }else{
+          this.apiwatcher.loadingDismiss();
+          console.log('Message: Network TimedOut');
+        }
+      }, async onError => { 
         this.apiwatcher.loadingDismiss();
-        console.log('Error: ',e.message);
-      }
+        this.doesExist = false;
+        this.submitAttempt = false;
+        this.isActive = false
+        this.checkCon = true;
+      });
+
     }else{
       this.doesExist = false;
       this.isActive = false;

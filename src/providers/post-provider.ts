@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http'; 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
 @Injectable()
 export class PostProvider{
 	
@@ -10,7 +9,9 @@ export class PostProvider{
 	re_server: string = "https://mcho-ims.herokuapp.com/server_api/";
 	// re_server: string = "https://mapp-cho-server.herokuapp.com/server_api/";
 
-	constructor(public http: Http){
+	constructor(
+		public http: Http,
+		){
 	}
 
 	postData(body, file){

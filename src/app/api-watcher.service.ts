@@ -102,24 +102,25 @@ export class ApiWatcherService {
 
   checkUsername(uname): any {
     return new Promise(resolve => {
-      try{
-        let body = {
-          action : 'checkAcc',
-          uname: uname
-        };
-        // console.log('post body: ', body);
-        this.postPvdr.postData(body, 'proses-api.php').subscribe(async data => {
-          if(data.success){ 
-            await resolve(data.success);
-          }else{
-            await resolve(data.success);            
-          }
-        },err => {
-          console.log('Message Error: ',err);
-        });  
-      }catch(e){
-        console.log('Error Message: ',e);
-      }
+      let body = {
+        action : 'checkAcc',
+        uname: uname
+      };
+      // console.log('post body: ', body);
+      this.postPvdr.postData(body, 'proses-api.php').subscribe(async data => {
+        if(data.success){ 
+          await resolve(data.success);
+        }else{
+          await resolve(data.success);            
+        }
+      },async err => {
+        this.loadingDismiss();
+        const toast = await this.toastCtrl.create({
+          message: 'Check Internet Connection.',
+          duration: 2000
+        });
+        toast.present();
+      });  
     });
   }
 
@@ -181,7 +182,7 @@ export class ApiWatcherService {
   async loadingPres2() {
     this.isLoading = true;
     return await this.loadingController.create({
-      message: '',
+      message: 'loading...',
       spinner: 'circles',
       cssClass: 'my-loading-class'
     }).then(a => {

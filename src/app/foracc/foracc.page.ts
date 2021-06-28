@@ -8,6 +8,7 @@ import { CustomValidatorsService } from '../custom-validators.service';
 import { PostProvider } from '../../providers/post-provider';
 import { SmsApiService } from '../sms-api.service';
 import { format } from 'date-fns';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-foracc',
@@ -89,29 +90,6 @@ export class ForaccPage implements OnInit {
     }
   }
 
-  checkUsername(uname): any {
-    return new Promise(resolve => {
-      try {
-        let body = {
-          action: 'checkAcc',
-          uname: uname
-        };
-        console.log('post body: ', body);
-        this.postPvdr.postData(body, 'proses-api.php').subscribe(async data => {
-          if (data.success) {
-            resolve(data.msg);
-          } else {
-            resolve(data.msg);
-          }
-        }, err => {
-          console.log('Message Error: ', err);
-        });
-      } catch (e) {
-        console.log('Error Message: ', e);
-      }
-    });
-  }
-
   async submit() {
     this.apiwatcher.loadingPres2();
     var phone = this.slideOneForm.value.contnum;
@@ -119,26 +97,23 @@ export class ForaccPage implements OnInit {
     var cpass = this.slideOneForm.value.cpass;
     var uname = this.slideOneForm.value.uname;
     var userVal = await this.apiwatcher.checkUsername(uname);
-    console.log(userVal);
     if (!this.slideOneForm.valid) {
       this.apiwatcher.loadingDismiss();
       this.unameVal = false;
       this.passValid = false;
       this.submitAttempt = true;
-    } else {
+    } else if (this.slideOneForm.valid){
       if (cpass != upass) {
         this.apiwatcher.loadingDismiss();
         this.unameVal = false;
         this.submitAttempt = false;
         this.passValid = true;
       } else if (userVal) {
-        console.log('username exist');
         this.apiwatcher.loadingDismiss();
         this.submitAttempt = false;
         this.passValid = false;
         this.unameVal = true;
       } else if (!userVal) {
-        console.log('username not exist');
         this.apiwatcher.loadingDismiss();
         this.unameVal = false;
         this.passValid = false;
@@ -155,6 +130,6 @@ export class ForaccPage implements OnInit {
           toast.present();
         });
       }
-    }
+    } 
   }
 }
