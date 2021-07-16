@@ -7,6 +7,7 @@ export class PostProvider{
 	
 	server: string = "http://localhost/mappcho/server_api/";
 	re_server: string = "https://mcho-ims.herokuapp.com/server_api/";
+	web_server: string ="https://mapp-cho.000webhostapp.com/";
 	// re_server: string = "https://mapp-cho-server.herokuapp.com/server_api/";
 
 	constructor(
