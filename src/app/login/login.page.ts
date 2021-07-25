@@ -1,4 +1,4 @@
-import { Parser } from 'json2csv';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostProvider } from '../../providers/post-provider';
@@ -7,7 +7,6 @@ import { Storage } from '@ionic/storage';
 import { Platform } from '@ionic/angular';
 import { LoadingController, AlertController, MenuController, Events } from '@ionic/angular';  
 import { ApiWatcherService } from '../api-watcher.service';
-import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +18,7 @@ export class LoginPage implements OnInit {
   
   username: string = "";
   password: string = "";
+  data: any;
   subscription: any;
   anggota: any;
   fullname: string;
@@ -154,6 +154,7 @@ export class LoginPage implements OnInit {
           this.checkCon = true;
         }
       });
+
     }else if(this.username == "" && this.password == ""){
       this.doesExist = false;
       this.isActive = false;
@@ -169,5 +170,7 @@ export class LoginPage implements OnInit {
     this.username = "";
     this.password = "";   
   }
-  
+
+
+
 }

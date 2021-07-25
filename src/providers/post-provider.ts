@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'; 
-import { Http, Headers, RequestOptions } from '@angular/http'; 
+import { Http ,Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 @Injectable()
@@ -7,8 +7,7 @@ export class PostProvider{
 	
 	server: string = "http://localhost/mappcho/server_api/";
 	re_server: string = "https://mcho-ims.herokuapp.com/server_api/";
-	web_server: string ="https://mapp-cho.000webhostapp.com/";
-	// re_server: string = "https://mapp-cho-server.herokuapp.com/server_api/";
+	web_server: string ="http://mapp-cho.000webhostapp.com/";
 
 	constructor(
 		public http: Http,

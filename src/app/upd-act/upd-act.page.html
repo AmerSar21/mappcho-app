@@ -17,59 +17,6 @@
 						<h4><b>Event Information</b></h4>
 					</div>
 				</ion-card-header>
-<!-- 				<ion-card-content>
-					<ion-row>
-						<ion-col>
-							<ion-item lines="none">
-								<ion-label><b>Event Name: </b></ion-label>
-							</ion-item>
-							<ion-item lines="none">
-								<ion-input type="text" [(ngModel)]="name"></ion-input>
-							</ion-item>
-						</ion-col>
-					</ion-row>
-					<ion-row>
-						<ion-col>
-							<ion-item lines="none">
-							  <ion-label>Date:</ion-label>
-							</ion-item>
-							<ion-item lines="none">
-							  <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="actdate" min="1950-01-01" max="2035-12-09" placeholder="Select Date"></ion-datetime>
-							  <ion-icon style="margin-left: 2px;" name="calendar"></ion-icon>
-							</ion-item>	
-						</ion-col>
-					</ion-row>	
-					<ion-row>
-						<ion-col>
-							<ion-item lines="none">				
-								<ion-buttons slot="end">
-									<ion-button color="secondary" (click)="checkDateID()" fill="outline">Verify</ion-button>
-								</ion-buttons>
-							</ion-item>
-						</ion-col>
-					</ion-row>	
-					<ion-row>
-						<ion-col>			
-							<ion-item color="none" lines="none">
-								<ion-label><b>Description: </b></ion-label>
-							</ion-item>
-							<ion-item color="none" lines="none">
-								<ion-textarea placeholder="Enter text here.." type="text" [(ngModel)]="description"></ion-textarea>
-							</ion-item>
-						</ion-col>
-					</ion-row>
-					<ion-row>
-						<ion-col>
-							<ion-item color="none" lines="none">
-								<ion-label><b>Status: </b></ion-label>
-								<ion-select placeholder="Select One" [(ngModel)]="status"> 
-						        	<ion-select-option value="Active">Active</ion-select-option>
-						        	<ion-select-option value="Inactive">Inactive</ion-select-option>
-						      	</ion-select>	
-							</ion-item>
-						</ion-col>
-					</ion-row>			
-				</ion-card-content> -->
 				<ion-card-content>
 						<ion-item color="none">
 							<ion-label position="floating">Event Name </ion-label>
@@ -81,9 +28,6 @@
 							  <ion-icon name="calendar" slot="end" align-self-center></ion-icon>
 						</ion-item>
 						<ion-item color="none" lines="none">
-							<ion-buttons slot="start">
-								<p>*See if date is occupied</p>
-					    	</ion-buttons>					
 							<ion-buttons slot="end">
 								<ion-button color="secondary" (click)="checkDateID()" fill="outline">Verify</ion-button>
 							</ion-buttons>

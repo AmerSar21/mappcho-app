@@ -58,6 +58,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.10.66",
+    "axios": "^0.21.1",
     "codelyzer": "^5.0.0",
     "cordova-android": "^9.0.0",
     "cordova-plugin-device": "^2.0.2",

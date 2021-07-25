@@ -10,274 +10,6 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content>
-	<ion-grid>
-		<ion-input class="ion-hide" [(ngModel)]="uid" value="{{userid}}"></ion-input>
-		<div class="ion-padding">
-			<ion-item>
-				<h4><b>Patient Information</b></h4>						
-			</ion-item>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Record ID:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{itr_id}}</ion-label>
-					</ion-item>
-				</ion-col>				
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Patient Name:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{fullname}}</ion-label>
-					</ion-item>					
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Residential Address:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{address}}</ion-label>
-					</ion-item>					
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Family Serial No:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{family_serial_no}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Age:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{age}}</ion-label>
-					</ion-item>
-				</ion-col>				
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Blood Pressure:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{blood_pressure}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Height(cm):</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{height}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Temperature:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{temperature}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">				
-						<ion-label><b>Weight(kg):</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{weight}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-item>
-				<h4><b>for CHU/RHU </b></h4>
-			</ion-item>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Transaction:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{mode_transaction}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Referred from:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label>{{referred_from}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Referred to:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label>{{referred_to}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Reason of Referral:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label>{{reason_of_referral}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Reffered by:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label>{{referred_by}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Consultation Date:</b></ion-label>
-					</ion-item>					
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{date_consultation}} / {{time_consultation}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Attending Officer:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{name_of_attending}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Nature of Visit:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{nature_of_visit}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Health Care Personnel:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{name_health_careprovider}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Chief Complaints:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<p style="padding: 10px !important;">{{chief_complaints}}</p>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Diagnosis:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<p style="padding: 10px !important;">{{diagnosis}}</p>
-					</ion-item>		
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Laboratory Test:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<p style="padding: 10px !important;">{{performed_lab_test}}</p>
-					</ion-item>					
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Medication/Treatment:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<p style="padding: 10px !important;">{{medication}}</p>
-					</ion-item>					
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Lab Findings/Impressions:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<p style="padding: 10px !important;">{{lab_findings}}</p>
-					</ion-item>					
-				</ion-col>
-			</ion-row>
-		</div>
-	</ion-grid>
-	<ion-fab slot="fixed" style="position: absolute; bottom: 5%; right: 10%;">
-      <ion-fab-button (click)="updateItrRec(itr_id,fullname,address,family_serial_no,age,mode_transaction, blood_pressure,height,temperature,weight,date_consultation,time_consultation,name_of_attending,nature_of_visit,referred_from,referred_to,reason_of_referral,referred_by,name_health_careprovider,chief_complaints,diagnosis,performed_lab_test,medication,lab_findings)" >
-        <ion-icon name="create">
-        </ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-</ion-content> -->
-
 <ion-content>
 	<div class="ion-padding">
 		<div style="text-align: center;">
@@ -305,6 +37,7 @@
 		  	</ion-row>
 		  </ion-card-content>
 		</ion-card>
+		<br/>
 		<ion-card>
 		  <ion-card-header>
 		  	<div style="text-align: center;">  		
@@ -350,6 +83,7 @@
 		  	</ion-row>
 		  </ion-card-content>
 		</ion-card>
+		<br/>
 		<ion-card>
 		  <ion-card-header>
 		  	<div style="text-align: center;">  		
@@ -378,6 +112,7 @@
 		  	</ion-row>
 		  </ion-card-content>
 		</ion-card>
+		<br/>
 		<ion-card>
 		  <ion-card-header>
 		  	<div style="text-align: center;">	  		
@@ -406,6 +141,7 @@
 		  	</ion-row>
 		  </ion-card-content>
 		</ion-card>
+		<br/>
 		<ion-card>
 		  <ion-card-header>
 		  	<div style="text-align: center;">

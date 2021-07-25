@@ -16,40 +16,49 @@
 
 <ion-content padding>
   <div class="ion-padding">
-    <div style="text-align: center;">
-      <h2>{{fullname}}</h2>
-      <ion-label>Account Name</ion-label>
-    </div>
     <ion-card>
-      <ion-card-header>
-        <div style="text-align: center;">       
+      <ion-card-header style="text-align: center;">
+        <div>
+          <ion-avatar style="margin: auto;" >
+            <img src="/assets/images/avatar.png">
+          </ion-avatar>
+          <h3><b>{{fullname}}</b></h3>
+          <ion-label style="font-size: 13px;">Account Name</ion-label>
+        </div>
+        <br/>
+        <div>       
           <ion-card-title>Profile Information</ion-card-title>
         </div>
       </ion-card-header>
       <ion-card-content>
-        Email Address
-        <br>
-        <h1>{{email}}</h1>        
-        <br>
-        Address
-        <br>
-        <h1>{{address}}</h1>        
-        <br>
-        User Type
-        <br>
-        <h1>{{usertype}}</h1>
-        <br>
+        <div>
+          <h2><b>{{email}}</b></h2>
+          <ion-label style="font-size: 13px;">Email</ion-label>  
+        </div>
+        <br />
+        <div>
+          <h2><b>{{address}}</b></h2>
+          <ion-label style="font-size: 13px;">Address</ion-label>  
+        </div>
+        <br />
+        <div>
+          <h2><b>{{usertype}}</b></h2>
+          <ion-label style="font-size: 13px;">Usertype</ion-label>
+        </div>
+        <br />
         <ion-row>
           <ion-col>
-            Birth Date
-            <br>
-            <h1>{{bdate}}</h1>
-            <br>                                           
+            <div>
+              <h2><b>{{bdate}}</b></h2>
+              <ion-label style="font-size: 13px;">Birth Date</ion-label>
+            </div>
+            <br />                                           
           </ion-col>
           <ion-col>
-            Gender
-            <br>
-            <h1>{{gender}}</h1>
+            <div>
+              <h2><b>{{gender}}</b></h2>
+              <ion-label style="font-size: 13px;">Gender</ion-label>
+            </div>
           </ion-col>         
         </ion-row>
       </ion-card-content>
