@@ -14,7 +14,7 @@
         <!-- appPages menu iteration -->
           <div *ngFor="let item of appPages; let i = index;"  detail="false" no-padding>  
              <ion-menu-toggle auto-hide="false" *ngIf="item.url">
-                <ion-item [routerLink]="item.url" routerDirection="root" routerLinkActive="active"> 
+                <ion-item lines="none" [routerLink]="item.url" routerDirection="root" routerLinkActive="active"> 
                   <ion-icon color="primary"  [name]="item.icon" slot="start"></ion-icon>
                   <ion-label class="text-font">
                     {{item.title}}
@@ -23,7 +23,7 @@
                 </ion-item>
               </ion-menu-toggle>           
 
-            <ion-item tappable *ngIf="item.children?.length > 0" (click)="toggleSection(i)" [ngClass] = "{'section-active': item.open, 'section': !item.open}">
+            <ion-item lines="none" tappable *ngIf="item.children?.length > 0" (click)="toggleSection(i)" [ngClass] = "{'section-active': item.open, 'section': !item.open}">
               <ion-icon color="primary" slot="start" name="paper"></ion-icon>
               <ion-icon color="primary" slot="end" name="arrow-dropright" *ngIf="!item.open"></ion-icon>
               <ion-icon color="primary" slot="end" name="arrow-dropdown" *ngIf="item.open"></ion-icon>
@@ -33,7 +33,7 @@
             </ion-item> 
 
             <div *ngIf="item.children && item.open">
-              <ion-list>
+              <ion-list lines="none">
                 <ion-menu-toggle>
                   <ion-item lines="none" class="sub-item" *ngFor="let sub of item.children" 
                   [routerLink]="sub.url" routerDirection="root" routerLinkActive="active">

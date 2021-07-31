@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar color="secondary">
   	<ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -14,19 +14,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-toolbar>
-    <ion-buttons>
-      <ion-searchbar (ionChange)="searchFiltered($event)"></ion-searchbar>
-    </ion-buttons>    
-  </ion-toolbar>
-   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <div padding-top>
-      <ion-refresher-content pullingIcon="chevron-down-circle-outline"
-        refreshingSpinner="circles"></ion-refresher-content>
+    <div style="height:80px;background-color: #0cd1e8;">
+      <ion-buttons padding>
+        <ion-searchbar class="text-style" (ionChange)="searchFiltered($event)"></ion-searchbar>
+      </ion-buttons>
     </div>
-  </ion-refresher>   
-  <ion-list class="box-content" color="none">
+  </ion-toolbar>
+  <ion-list class="box-content" color="none" padding>
     <div *ngIf="plist && plist.length > 0">
       <ion-item-sliding  *ngFor="let perlist of plist">
           <ion-item-options side="start">

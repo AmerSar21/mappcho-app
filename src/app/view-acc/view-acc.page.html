@@ -16,36 +16,36 @@
 			<ion-card>
 			  <ion-card-header>
 			  	<div style="text-align: center;">	  		
-				    <ion-card-title>User Information</ion-card-title>
+				    <ion-card-title><b>User Information</b></ion-card-title>
 			  	</div>
 			  </ion-card-header>
 			  <ion-card-content>
 			  	<ion-row>
 			  		<ion-col>
-				  		User ID
+				  		<b>User ID</b>
 				  		<br>
-					  	<h1>{{accid}}</h1>		  			  				  			  			  		
+					  	<h2>{{accid}}</h2>		  			  				  			  			  		
 			  		</ion-col>
 			  		<ion-col>
-				  		Status
+				  		<b>Status</b>
 				  		<br>
-					  	<h1>{{status}}</h1>		  			  				  			  			  		
+					  	<h2>{{status}}</h2>		  			  				  			  			  		
 			  		</ion-col>			  		
 			  	</ion-row>
 			  	<br>
 			  	<ion-row>
 			  		<ion-col>
-				  		Username
+				  		<b>Username</b>
 				  		<br>
-					  	<h1>{{uname}}</h1>		  			  				  			  			  		
+					  	<h2>{{uname}}</h2>		  			  				  			  			  		
 			  		</ion-col>
 			  	</ion-row>
 			  	<br>
 			  	<ion-row>
 			  		<ion-col>
-				  		Password
+				  		<b>Password</b>
 				  		<br>
-					  	<h1>{{upass}}</h1>		  			  				  			  			  		
+					  	<h2>{{upass}}</h2>		  			  				  			  			  		
 			  		</ion-col>
 			  	</ion-row>		
 			  </ion-card-content>
@@ -53,147 +53,48 @@
 			<ion-card>
 			  <ion-card-header>
 			  	<div style="text-align: center;">	  		
-				    <ion-card-title>Personal Information</ion-card-title>
+				    <ion-card-title><b>Personal Information</b></ion-card-title>
 			  	</div>
 			  </ion-card-header>
 			  <ion-card-content>
 			  	<ion-row>
 			  		<ion-col>
-				  		Full Name
+				  		<b>Full Name</b>
 				  		<br>
-					  	<h1>{{fname}} {{lname}}</h1>		  			  				  			  			  		
+					  	<h2>{{fname}} {{lname}}</h2>		  			  				  			  			  		
 			  		</ion-col>		  		
 			  	</ion-row>
 			  	<br>
 			  	<ion-row>
 			  		<ion-col>
-				  		Birth Date
+				  		<b>Birth Date</b>
 				  		<br>
-					  	<h1>{{bdate}}</h1>		  			  				  			  			  		
+					  	<h2>{{bdate}}</h2>		  			  				  			  			  		
 			  		</ion-col>
 			  		<ion-col>
-				  		Gender
+				  		<b>Gender</b>
 				  		<br>
-					  	<h1>{{gender}}</h1>		  			  				  			  			  		
+					  	<h2>{{gender}}</h2>		  			  				  			  			  		
 			  		</ion-col>			  		
 			  	</ion-row>
 			  	<br>
 			  	<ion-row>
 			  		<ion-col>
-				  		Email Address
+				  		<b>Email Address</b>
 				  		<br>
-					  	<h1>{{email}}</h1>		  			  				  			  			  		
+					  	<h2>{{email}}</h2>		  			  				  			  			  		
 			  		</ion-col>
 			  	</ion-row>		
 			  	<br>
 			  	<ion-row>
 			  		<ion-col>
-				  		Address
+				  		<b>Address</b>
 				  		<br>
-					  	<h1>{{address}}</h1>
+					  	<h2>{{address}}</h2>
 			  		</ion-col>
 			  	</ion-row>					  	
 			  </ion-card-content>
 			</ion-card>			
-			
-		<!-- <ion-item> 
-				<h4><b>User Information</b></h4>
-			</ion-item>
-			<ion-row>
-				<ion-col size="5">
-					<ion-item lines="none">
-						<ion-label><b>User ID:</b></ion-label>
-					</ion-item>												
-				</ion-col>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label>{{accid}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col size="5">
-					<ion-item lines="none">
-						<ion-label><b>Username:</b></ion-label>
-					</ion-item>												
-				</ion-col>
-				<ion-col class="ion-align-self-center">
-					<ion-item lines="none">
-						<ion-label>{{uname}}</ion-label>
-					</ion-item>								
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col size="5">
-					<ion-item lines="none">
-						<ion-label><b>Password:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col class="ion-align-self-center">
-					<ion-item lines="none">		
-						<ion-label>{{upass}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col size="5">
-					<ion-item lines="none">
-						<ion-label><b>Status:</b></ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col class="ion-align-self-center">
-					<ion-item lines="none">		
-						<ion-label>{{status}}</ion-label>
-					</ion-item>
-				</ion-col>
-			</ion-row>			
-			<ion-item>
-				<h4><b>Personal Information</b></h4>
-			</ion-item>					
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Account Name:</b> </ion-label>
-					</ion-item>
-				</ion-col>
-				<ion-col class="ion-align-self-center">			
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{lname}}, {{fname}}</ion-label>
-					</ion-item>					
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col size="6">
-					<ion-item lines="none">
-						<ion-label><b>Birth Date:</b></ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{bdate}}</ion-label>
-					</ion-item>	
-				</ion-col>
-			</ion-row>	
-			<ion-row>
-				<ion-col size="5">
-					<ion-item lines="none">
-				      	<ion-label><b>Gender:</b> </ion-label>			
-				    </ion-item>		
-				</ion-col>
-				<ion-col class="ion-align-self-center"> 
-					<ion-item lines="none">
-				      	<ion-label>{{gender}}</ion-label>			
-				    </ion-item>		
-				</ion-col>				
-			</ion-row>								
-			<ion-row>
-				<ion-col>
-					<ion-item lines="none">
-						<ion-label><b>Email Address:</b> </ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-label style="padding: 10px !important;">{{email}}</ion-label>
-					</ion-item>			
-				</ion-col>
-			</ion-row> -->
 
 		</div>
 	</ion-grid>

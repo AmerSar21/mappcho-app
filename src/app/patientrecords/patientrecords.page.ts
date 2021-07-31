@@ -101,21 +101,22 @@ export class PatientrecordsPage implements OnInit {
       }else{
         this.apiwatcher.loadingPres2();
         const myData = this.perlists;
-        const parser = new Parser();
-        const csv = parser.parse(myData);
-        const result = await Filesystem.writeFile({
-          path: 'PERDataList.csv',
-          data: csv,
-          directory: FilesystemDirectory.Documents,
-          encoding: FilesystemEncoding.UTF8        
-        })
-        this.apiwatcher.loadingDismiss();
-        const toast = await this.toastCtrl.create({
-          message: 'PER List Download Successful.',
-          duration: 2000
-        }); 
-        toast.present();    
-        console.log('Wrote file', result);
+        console.log('data: ', myData);
+        // const parser = new Parser();
+        // const csv = parser.parse(myData);
+        // const result = await Filesystem.writeFile({
+        //   path: 'PERDataList.csv',
+        //   data: csv,
+        //   directory: FilesystemDirectory.Documents,
+        //   encoding: FilesystemEncoding.UTF8        
+        // })
+        // this.apiwatcher.loadingDismiss();
+        // const toast = await this.toastCtrl.create({
+        //   message: 'PER List Download Successful.',
+        //   duration: 2000
+        // }); 
+        // toast.present();    
+        // console.log('Wrote file', result);
       }
     } catch(e) {
       this.apiwatcher.loadingDismiss();
