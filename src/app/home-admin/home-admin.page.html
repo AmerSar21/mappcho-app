@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -14,11 +14,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <section text-center>
-    <h2>Welcome, <br> {{fullname}}</h2>
-  </section>  
-  <ion-grid>
+<ion-content>
+  <div style="padding-top: 20px;padding-left: 35px; padding-right: 35px; height:200px;background-color: #0cd1e8;">
+    <ion-label style="color: white; font-size: 25px;"><b>Welcome</b></ion-label><br/>  
+    <ion-label style="padding-left: 10px;color: white; font-size: 35px;">{{fullname}}</ion-label><br/>
+    <ion-label style="padding-left: 10px;color: white; font-size: 25px;">Administrator</ion-label>
+  </div>
+  <div padding>
     <ion-row>
       <ion-col col-6>
         <ion-card type="button" (click)="accountsPage()" text-center padding color="primary">
@@ -34,5 +36,5 @@
         </ion-card> 
       </ion-col>
     </ion-row>
-\ </ion-grid> 
+  </div>
 </ion-content>

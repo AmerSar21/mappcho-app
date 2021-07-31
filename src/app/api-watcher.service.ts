@@ -167,7 +167,7 @@ export class ApiWatcherService {
     this.isLoading = true;
     return await this.loadingController.create({
       message: 'loading contents ...',
-      spinner: 'circles',
+      spinner: 'circular',
       cssClass: 'my-loading-class'
     }).then(a => {
       a.present().then(() => {
@@ -183,7 +183,7 @@ export class ApiWatcherService {
     this.isLoading = true;
     return await this.loadingController.create({
       message: 'loading...',
-      spinner: 'circles',
+      spinner: 'circular',
       cssClass: 'my-loading-class'
     }).then(a => {
       a.present().then(() => {

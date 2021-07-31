@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -14,32 +14,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <!-- <ion-grid>
-    <ion-row>
-    <div style="width: 100%; text-align: center;"><h2>Activity</h2></div>
-      <ion-col>
-        <div class="box-content">
-          <ion-list class="box-content">
-            <ion-item-sliding class="box-content" *ngFor="let actvlist of actvlists">
-              <ion-item color="none" lines="none">
-                <ion-label class="list-text-font"><b>{{actvlist.name}}</b><br>{{actvlist.actdate}}</ion-label>
-              </ion-item>
-              <ion-item-options side="end">
-                <ion-item-option (click)="viewActivity(actvlist.act_id,actvlist.name,actvlist.description,actvlist.actdate,actvlist.status)">
-                View
-                </ion-item-option>
-              </ion-item-options>
-            </ion-item-sliding>
-          </ion-list> 
-        </div>          
-      </ion-col>
-    </ion-row>    
-  </ion-grid>
-   --><section text-center>
-    <h2>Welcome, <br> {{fullname}}</h2>
-  </section>  
-  <ion-grid>
+<ion-content>
+  <div style="padding-top: 20px;padding-left: 35px; padding-right: 35px; height:200px;background-color: #0cd1e8;">
+    <ion-label style="color: white; font-size: 25px;"><b>Welcome</b></ion-label><br/>  
+    <ion-label style="padding-left: 10px;color: white; font-size: 35px;">{{fullname}}</ion-label><br/>
+    <ion-label style="padding-left: 10px;color: white; font-size: 25px;">Field Worker</ion-label>
+  </div>
+  <div padding>
     <ion-row>
       <ion-col col-6>
         <ion-card type="button" (click)="patientEnrolPage()" text-center padding color="primary">
@@ -67,6 +48,7 @@
           <h3>Activity</h3>
         </ion-card>
       </ion-col>      
-    </ion-row>    
-  </ion-grid>  
+    </ion-row> 
+  </div>
+    
 </ion-content>

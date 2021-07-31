@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar color="secondary">
+<ion-header no-border>
+  <ion-toolbar color="secondary" no-border>
   	<ion-buttons slot="start">
 	  <ion-back-button text="back" icon="arrow-dropleft" fill="outline">
 	  </ion-back-button>
@@ -11,11 +11,14 @@
 </ion-header>
 
 <ion-content>
-	<div class="ion-padding">
-		<div style="text-align: center;">
-			<h2>{{lname}}, {{fname}} {{mname}}</h2>
+	<div style="padding-top: 20px;padding-left: 35px; padding-right: 35px; height:150px;background-color: #0cd1e8;">
+		<div style="text-align: center; color:white;">
+			<h2>{{fname}} {{mname}} {{lname}}</h2>
 			<ion-label>Patient Name</ion-label>
-		</div>
+		</div>	  
+	</div>
+	<div class="ion-padding">
+		
 		<ion-card>
 		  <ion-card-header>
 		  	<div style="text-align: center;">	  		
