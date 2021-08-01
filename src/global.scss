@@ -26,13 +26,14 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @font-face {
-  font-family: 'Century Gothic', san-serif !important;
-  font-weight: normal;
+  font-family: 'Poppins-Regular';
+  src: url('./assets/fonts/Poppins-Regular.otf');
+  font-weight: 400;
   font-style: normal;
 }
 
 * {
-  font-family: 'Century Gothic', san-serif !important;
+  font-family: 'Poppins-Regular', !important;
 }
 
 .searchbar-input.sc-ion-searchbar-md {
