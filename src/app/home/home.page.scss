@@ -4,12 +4,12 @@
 }
 
 .text-style {
-	font-family: 'Century Gothic', san-serif;					
+	font-family: 'Poppins-Regular', san-serif;					
 }
 
 .list-text-font{
 	background: transparent;
-	font-family: 'Century Gothic', san-serif;
+	font-family: 'Poppins-Regular', san-serif;
 }
 
 ion-card {
@@ -18,7 +18,7 @@ ion-card {
 
 ion-toolbar {
 	text-align: center;
-	font-family: 'Century Gothic', san-serif;	
+	font-family: 'Poppins-Regular', san-serif;	
 }
 
 .box-content {
@@ -45,7 +45,12 @@ ion-item{
 	border-radius: 12px;
 	margin-right: 20px;
 	margin-left: 16px;
-	font-family: 'Century Gothic', san-serif;	
+	font-family: 'Poppins-Regular', san-serif;	
+}
+
+.mid-card {
+	padding-left: 90px;
+	padding-right: 90px;
 }
 
 .square-button {

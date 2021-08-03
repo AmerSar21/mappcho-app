@@ -1,43 +1,48 @@
 .background {
-	--background: url('/assets/images/logo5.png') no-repeat center center fixed;
-  background-size: cover !important;    
+  --background: url("/assets/images/logo5.png") no-repeat center center fixed;
+  background-size: cover !important;
 }
 
 ion-toolbar {
-	text-align: center;
-	font-family: 'Century Gothic', san-serif;	
+  text-align: center;
+  font-family: "Poppins-Regular";
 }
 
 .box-content {
-	display: flex;
-	justify-content: center;
-	align-items: center; 
-	background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
 }
 
-.home-card{
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 90px;
+.mid-card {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.home-card {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 90px;
 }
 
 ion-card {
-	border-radius: 15px;
+  border-radius: 15px;
 }
-ion-item{
-	--highlight-background: unset;	
+ion-item {
+  --highlight-background: unset;
 }
 
-ion-icon{
-	position: relative;
-	font-size: 5em;
+ion-icon {
+  position: relative;
+  font-size: 5em;
 }
 
 ion-badge {
-	position: absolute;
-	font-size: 1.5em;
-	z-index:100;
-	top: 10px;
-	right: 23px;
-	border-radius: 100px;
+  position: absolute;
+  font-size: 1.5em;
+  z-index: 100;
+  top: 10px;
+  right: 23px;
+  border-radius: 100px;
 }
